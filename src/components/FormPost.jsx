@@ -1,19 +1,22 @@
 import React from 'react';
+import socketIO from 'socket.io-client';
+
+import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
+
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Form from 'react-bootstrap/Form';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllUsersData } from '../redux/slices/allUserSlice';
-import { CustomMenu, CustomToggle } from './DropDown';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+
 import axios from '../axios.js';
-import { toast } from 'react-toastify';
+import { fetchAllUsersData } from '../redux/slices/allUserSlice';
+import { CustomMenu, CustomToggle } from './DropDown';
 import { fetchSentMessages } from '../redux/slices/SentMessages';
 
-import socketIO from 'socket.io-client';
+import { toast } from 'react-toastify';
 
 export const FormPost = () => {
 	const socket = socketIO.connect(process.env.REACT_APP_API_URL);

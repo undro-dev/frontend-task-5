@@ -1,9 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Header from '../components/Header';
+
 import { fetchIncomingMessages } from '../redux/slices/IncomMessSlice';
 
+import Header from '../components/Header';
 import { MessageItem } from '../components/MessageItem';
 import { Footer } from '../components/Footer';
 
