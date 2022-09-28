@@ -16,7 +16,7 @@ import { fetchSentMessages } from '../redux/slices/SentMessages';
 import socketIO from 'socket.io-client';
 
 export const FormPost = () => {
-	const socket = socketIO.connect('http://localhost:3000');
+	const socket = socketIO.connect(process.env.REACT_APP_API_URL);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
